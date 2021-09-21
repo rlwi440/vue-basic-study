@@ -26,11 +26,12 @@ export default {
       // false 라면 
       if(!validatedTitle){
         alert('유효하지 않은 제목입니다')
-         this.title= this.title.trim()
+         this.title= this.title.trim() 
          return
       }
       console.log(this.title)
       this.$emit('create-todo',this.title)
+      //초기화 예제
       this.title=''
     }
   }
