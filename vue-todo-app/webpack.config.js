@@ -11,7 +11,11 @@ module.exports = (env, opts) => {
       // `__dirname`은 현재 파일의 위치를 알려주는 NodeJS 전역 변수
       //확장자 파일 생략 resolve 라는속성
        resolve:{
-        extensions:['.vue','.js']
+        extensions:['.vue','.js'],
+        alias: {
+          '~': path.join(__dirname),
+          'scss': path.join(__dirname, './scss/') 
+        }
        },
       entry: {
         app: [
