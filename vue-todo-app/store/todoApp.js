@@ -167,7 +167,7 @@ const actions = {
       })
       .write() // 수정된 `todos` 배열을 반환합니다.
 
-      commit('assignTodos',_cloneDeep(newTodos))
+    commit('assignTodos', _cloneDeep(newTodos))
   },
   clearCompleted ({ state, commit, dispatch }) {
     // Lodash 라이브러리 활용
