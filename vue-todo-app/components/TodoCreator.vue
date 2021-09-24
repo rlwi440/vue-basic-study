@@ -33,7 +33,8 @@ export default {
          return
       }
       console.log(this.title)
-      this.$emit('create-todo',this.title)
+      // this.$emit('create-todo',this.title)
+      this.$store.dispatch('todoApp/createTodo',this.title)
       //초기화 예제
       this.title=''
       //scrollTo  예제 및 document.body 부분체크 
