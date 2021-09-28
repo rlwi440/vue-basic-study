@@ -105,6 +105,7 @@ export default {
       }
     }
   },
+  // 감시하는역할 
   watch: {
     $route () {
       this.updateFilter(this.$route.params.id)
