@@ -1,10 +1,9 @@
 <template>
   <div>
     <v-text-field
-    v-model="title"
-    outlined
-    @keypress.enter="searchMovies"
-    >
+      v-model="title"
+      outlined
+      @keypress.enter="searchMovies">
       <template v-slot:prepend-inner>
         <v-icon>search</v-icon>
       </template>
@@ -13,32 +12,36 @@
           v-if="loading"
           size="24"
           color="primary"
-          indeterminate
-        />
+          indeterminate />
       </template>
     </v-text-field>
   </div>
 </template>
 
 <script>
-import axios from 'axios'
+import { mapActions } from 'vuex'
+
 export default {
-  data(){
-    return{
-      title: '',
-      loading:false
+  name: 'SearchBar',
+  computed: {
+    title: {
+      get () {
+        return this.$store.state.movie.title
+      },
+      set (title) {
+        this.$store.commit('movie/updateState', {
+          title
+        })
+      }
+    },
+    loading () {
+      return this.$store.state.movie.loading
     }
   },
-  methods:{ 
-    searchMovies(){ 
-      // omdb API get링크연결 
-      // this.title 연결 
-      axios.get(`http://www.omdbapi.com/?apikey=6f3b4914&s=${this.title}`)
-      .then(res =>{
-        console.log(res)
-      })
-        console.log('searchMovies🐸')
-    }
+  methods: {
+    ...mapActions('movie', [
+      'searchMovies'
+    ])
   }
 }
 </script>
