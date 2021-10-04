@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>로얄캐닌</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/index_media.css">
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <script src="js/index.js"></script>
+    <style>
+        header > nav {
+        left: -500px;
+        display: block !important;
+        transition: all 0.65s;
+        /*
+         display:none을 안하는 이유는  이미 left : -500px를 적용시켜  시야에서 사라졌기때문에 
+         굳이 display:none을 안해도 되구요
+        자연스러운 효과를 넣기위해 transition을 사용했습니다.
+        */
+        }
+        header > nav.on {
+        left: 0;
+        }
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <!-- header -->
+        <div id="headerWrap">
+            <header>
+                
+                    <h1><a href="index.html"><img src="images/logo-red.png" alt="logo-red"></a></h1>
+                    <nav>
+                        <ul>
+                            <li><a href="best-page.html">BEST</a></li>
+                            <li><a href="sale-page.html">SALE</a></li>
+                            <li><a href="care-page.html">건강케어사료</a></li>
+                            <li  class="toggleMenu" id="toggle"><a href="#">일반 사료 <i class="arrowdown"></i></a> 
+                                <ul id="menu" >
+                                    <li class="submenu01"><a href="dog-feed.html">품종별 사료</a></li>
+                                    <li class="submenu02"><a href="dog-size.html">크기별 사료</a></li>
+                                </ul>    
+                            </li>
+                             <li><a href="tip-page.html">댕댕이 건강 TIP</a></li>
+                             </ul>
+
+                    <p id="close">
+                        <span></span>
+                        <span></span>
+                    </p>
+                    </nav>
+                    <ul class="submenu">
+                        <li><a href="#">검색</a></li>
+                        <li><a href="login.html">로그인</a></li>
+                        <li><a href="join.html">회원가입</a></li>
+                    </ul>
+                
+         
+                         <p id="btn">
+                             <span></span>
+                             <span></span>
+                             <span></span>
+                         </p>
+                        
+             </header>
+            <div>
+                <span id="tothetop"><a href="#">TOP</a></span>
+                </div>
+            </div>
+        <!-- main01 -->
+        <div id="main01">
+        <article>
+                
+        <div><!-- overflow -->
+            <ul>       
+                <li class="no01">
+                    <dl>
+                        <dt>견종의 고유한 특성에<br> 맞는 사료를 찾으시나요?</dt>
+                        <dd><a href="dog-feed.html">제품보기 </a></dd>
+                        </dl>       
+                </li> 
+                    
+                <li class="no02">
+                    <dl>
+                        <dt>특별한 관리가 필요하다면?<br>사료부터 바꿔주세요</dt>
+                        <dd><a href="care-page.html">제품보기</a></dd>
+                    </dl>
+                </li> 
+    
+                <li class="no03">
+                    <dl>
+                        <dt>건강한 습관,<br> 정상적인<br> 체중 관리의 시작은 <br>로얄캐닌</dt>
+                        <dd><a href="care-page.html">제품보기</a></dd>
+                    </dl>
+                </li> 
+                        
+    
+            </ul>
+        </div>
+          
+            <p class="prev">앞으로
+                <span></span>
+                <span></span>
+            </p>
+            <p class="next">뒤로 
+                <span></span>
+                <span></span>
+            </p>
+        </article>
+        </div>
+        <!-- main02 -->
+        <div id="main02">
+            <article>
+                <h2><span>Weekly Popularity</span> PRODUCT<small>주간 인기상품</small></h2>
+                <div id="container01">
+                    <ul>
+                        <li><a href="purchase-page.html"><img src="images/dogsize/small/mini-indoor-puppy.png" alt="mini-indoor-puppy"></a>
+                        <dl>
+                            <dt><a href="#">로얄캐닌 미니 인도어 퍼피3kg</a></dt>
+                            <dd><a href="#">30,500원</a></dd>
+                        </dl>
+                        </li>
+                        <li><a href="#"><img src="images/dogsize/x-small/mini-puppy-pouch.png" alt="mini-puppy(pouch)"></a>
+                        <dl>
+                            <dt><a href="#">로얄캐닌 미니 인도어 퍼피 파우치85g</a></dt>
+                            <dd><a href="#">1,150원</a></dd>
+                        </dl>
+                        </li>
+                        <li><a href="#"><img src="images/dogsize/x-small/mini-starter-motherbabydog.png" alt="start"></a>
+                            <dl>
+                                <dt><a href="#">로얄캐닌 미니 스타터 마더 베이비독3kg</a></dt>
+                                <dd><a href="#">11,400원</a></dd>
+                            </dl>
+                        </li>
+                        <li><a href="#"><img src="images/dogbreed/poddle-puppy.png" alt="poddle-puppy"></a>
+                            <dl>
+                                <dt><a href="#">로얄케닌 푸들 퍼피3kg</a></dt>
+                                <dd><a href="#">16,900원</a></dd>
+                            </dl>
+                        </li>
+                        <li>
+                            <a href="#"><img src="images/dogsize/x-small/x-small-puppy.png" alt="x-sall-puppy"></a>
+                            <dl>
+                                <dt><a href="#">로얄캐닌 엑스스몰 퍼피3kg</a></dt>
+                                <dd><a href="#">15,000원</a></dd>
+                            </dl>
+                        </li>
+                        <li>
+                            <a href="#"><img src="images/dogsize/small/mini-sterilised.png" alt="mini-sterilised"></a>
+                            <dl>
+                                <dt><a href="#">로얄캐닌 미니 스테럴 라이즈드3kg</a></dt>
+                                <dd><a href="#">35,000원</a></dd>
+                            </dl>
+                        </li>
+                        <li>
+                            <a href="#"><img src="images/dogsize/small/mini-indoor-adult.png" alt="mini-adult(pouch)"></a>
+                            <dl>
+                                <dt><a href="#">로얄캐닌 미니 어덜트3kg</a></dt>
+                                <dd><a href="#">1,150원</a></dd>
+                            </dl>
+                        </li>
+                        <li>
+                            <a href="#"><img src="images/dogsize/x-small/startermousse.png" alt="startermousse"></a>
+                            <dl>
+                                <dt><a href="#">로얄캐닌 미니 스타터무스195g</a> </dt>
+                                <dd><a href="#">3,000원</a></dd>
+                            </dl>
+                        </li>
+                    </ul>
+                </div>
+            </article>
+        </div>
+
+        <div id="service">
+            <article>
+                <p class="service">
+                    <dl>
+                        <dt>로얄캐닌 체험단을 모집합니다<br><br>여러가지 로얄캐닌을 체험해보세요
+                            </dt>
+                        <dd><a href="#">신청하러 가기</a></dd>
+                    </dl>
+                </p>
+            </article>
+        </div>
+        <div id="service02">
+
+        </div>
+        <!-- main03 -->
+        <div id="main03">
+            <article>
+                <h2>댕댕이 포토존</h2>
+                 <div id="photo">
+                    <ul>
+                        <li>
+                            <img src="images/pomeranian1-1.png" alt="pomeranian1-1">
+                        </li>
+
+                        <li>
+                            <img src="images/pomeranian1-2.png" alt="pomeranian1-2">
+                        </li>
+
+                        <li>
+                            <img src="images/pomeranian1-3.png" alt="pomeranian1-3">
+                        </li>
+
+                        <li>
+                            <img src="images/maltese1-1.png" alt="maltese1-1">
+                        </li>
+
+                        <li>
+                            <img src="images/maltese1-2.png" alt="maltese1-2">
+                        </li>
+
+                        <li>
+                            <img src="images/shihtzu1-1.png" alt="shihtzu1-1">
+                        </li>
+
+                        <li>
+                            <img src="images/shihtzu1-2.png" alt="shihtzu1-2">
+                        </li>
+
+                        <li>
+                            <img src="images/yorkshireterrier1-1.png" alt="yorkshireterrier">
+                        </li>
+
+                    </ul>
+                 </div>
+            </article>
+        </div>
+
+
+
+
+        <!-- main04 -->
+        <div id="main04">
+            <article>
+                <!-- autoplay muted loop -->
+                <video class="video" autoplay muted loop>
+                    <source src="video/video01.mp4" type="video/mp4">
+                </video>
+                <dl>
+                    <dt><span>배울수록 딩동 - 댕동</span><br>
+                        반려견의 건강 관리법 </dt>
+                        <dd><a href="tip-page.html">보러가기</a></dd>
+                </dl>
+            </article>
+        </div>
+        <!-- footer -->
+        <div id="footerWrap">
+            <footer>
+                <dl>
+                    <dt><a href="#">
+                        <img src="images/logo.png" alt="logo">
+                        </a></dt>
+                    <dd>
+                        <dl>
+                            <dt>COMPANY</dt>
+                            <dd>로얄캐닌(royalcanin)</dd> 
+        
+                            <dt>OWNER</dt>
+                            <dd>성지원</dd> 
+        
+                            <dt>E-mail</dt>
+                            <dd>naver@naver.com</dd> 
+        
+                            <dt>CALL CENTER</dt>
+                            <dd>010-1234-4567<wbr>
+                            </dd> 
+                           </dl>
+                           <dl>
+                            <dt>MALL ORDER LICENSE</dt>
+                            <dd>제 2021-경기고양-1234호[사업자정보확인] </dd> 
+        
+                            <dt>BUSINESS LICENSE</dt>
+                            <dd>123-10-123456</dd> 
+        
+                            <dt>ADDRESS</dt>
+                            <dd>경기도 고양시 일산서구 킨텍스로240</dd>
+                        </dl>
+               
+                            
+                        <dl>  
+                            <dd>
+                            <ul class="footer02">
+                                    <li><a href="#"><img src="images/instargram.png" alt="instargram"></a></li>
+                                    <li><a href="#"><img src="images/facebook.png" alt="facebook"></a></li>
+                                    <li><a href="#"><img src="images/youtube.png" alt="youtube"></a></li>
+                                </ul>
+                            </dd>
+                        </dl>
+                        
+                      <small>&copy; copyright 로얄캐닌 All right reserved / disign by JIONE / agreenment / 개인정보취급방지 / guide</small>
+                    </dd>
+                </dl>
+           
+
+
+              <p>고객님은 안전거래를 위해 현금 등으로 결제시 저희 쇼핑물에서 가입한PG사의 구매안저서비스를 이용하실 수 있습니다  KG 이니시스 에스크로 (서비스가입사실확인)</p>
+            </footer>
+          </div>
+    </div>
+    <script>
+        $("#btn").on("click", function () {
+            $("nav").addClass("on");
+            // btn버튼을 클릭하면 nav태그에 on클래스가 추가가 됨
+            });
+            $("#close").on("click", function () {
+            $("nav").removeClass("on");
+            // close버튼을 클릭하면 nav태그에 on클래스가 제거가 됨
+
+            });
+    </script>
+
+</body>
+</html>
