@@ -7,7 +7,8 @@ export default {
   state: () => ({
     title: '',
     movies: [],
-    loading: false
+    loading: false,
+    error:null
   }),
   mutations: {
     updateState (state, payload) {
@@ -23,18 +24,25 @@ export default {
   },
   actions: {
     fetchMovies ({ state, commit }, pageNum) {
-      return new Promise(async resolve => {
+      return new Promise(async (resolve,reject) => {
+       try{
         const res = await axios.get(`https://www.omdbapi.com/?apikey=${API_KEY}&s=${state.title}&page=${pageNum}`)
         commit('pushIntoMovies', res.data.Search)
         resolve(res.data)
+       } catch(error) {
+          reject(error)
+       }
       })
     },
     async searchMovies ({ commit, dispatch }) {
       commit('updateState', {
         loading: true, // 로딩 애니메이션 시작
-        movies: [] // 초기화
+        movies: [],// 초기화
+        error:null 
+
       })
 
+     try{
       const { totalResults } = await dispatch('fetchMovies', 1)
       const pageLength = Math.ceil(totalResults / 10)
 
@@ -43,7 +51,12 @@ export default {
           if (i > 4) break
           await dispatch('fetchMovies', i)
         }
-      }
+      }     
+     }catch(error){
+      commit('updateState',{
+        error
+      })
+     }
 
       commit('updateState', {
         loading: false // 로딩 애니메이션 종료
