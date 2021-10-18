@@ -48,7 +48,7 @@ describe("movie store", () => {
             imdbID: "123456",
             Title: "영화 제목",
             Poster: "image.jpg",
-            Year: "2020",
+            Year: "2021",
           },
         ],
       },
@@ -59,7 +59,7 @@ describe("movie store", () => {
         imdbID: "123456",
         Title: "영화 제목",
         Poster: "image.jpg",
-        Year: "2020",
+        Year: "2021",
       },
     ])
   })

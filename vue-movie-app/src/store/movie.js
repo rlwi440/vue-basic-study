@@ -1,6 +1,6 @@
 import axios from 'axios'
 
-const API_KEY = '9d38c929'
+const API_KEY = '6f3b4914'
 
 export default {
   namespaced: true,

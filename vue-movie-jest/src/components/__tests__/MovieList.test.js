@@ -29,7 +29,7 @@ describe('MovieList',()=>{
     })
   })
   test('영화 제목 출력', () => {
-    expect(wrapper.find('v-card-title-stub').text()).toBe('영화 제목')
+    expect(wrapper.find('v-card-title-stub').text()).toEqual('영화 제목')
   })
 
   test('개봉년도 출력', () => {

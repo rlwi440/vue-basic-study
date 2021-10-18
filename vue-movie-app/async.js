@@ -1,161 +1,174 @@
-
-function a(){
+// 순서대로 동작하는 동기 방식
+function a() {
   console.log('a')
 }
-
-function b(){
+function b() {
   console.log('b')
 }
-a() //a
-b() //b
 
-function a(){
-  setTimeout(function(){
-    console.log('a')
-  },1000)
-}
-
-function b(){
-  console.log('b')
-}
 a()
 b()
+// a
+// b
 
-//b
-//a
-// callback 함수예제 
-function a(cb){
-  setTimeout(function(){
+
+// 동기 방식에서 시간 지연에 따른 문제 발생
+function a(cb) {
+  setTimeout(function () {
     console.log('a')
     cb()
-  },1000)
+  }, 1000) // 1초
 }
-function b(){
+function b() {
   console.log('b')
 }
 
-a(function(){
-  b()
-})
+a()
+b()
+// b
+// a
 
-//a
-//b
 
-function a(cb){
-  setTimeout(function(){
+// 콜백(Callback) 함수를 사용하여 해결
+function a(cb) {
+  setTimeout(function () {
     console.log('a')
     cb()
-  },1000)
+  }, 1000)
+}
+function b() {
+  console.log('b')
 }
 
-function b(cb){
-  setTimeout(function(){
+a(function () {
+  b()
+})
+// a
+// b
+
+
+// 콜백 함수는 콜백 지옥(Callback Hell)이 될 수 있음
+function a(cb) {
+  setTimeout(function () {
+    console.log('a')
+    cb()
+  }, 1000)
+}
+function b(cb) {
+  setTimeout(function () {
     console.log('b')
     cb()
-  },1000)
+  }, 1000)
 }
-function c(cb){
-  setTimeout(function(){
-    console.log('c')
-    cb()
-  },1000)
-}
-function d(cb){
-  setTimeout(function(){
-    console.log('d')
-    cb()
-  },1000)
-}
+// c함수 d함수 등...
 
-a(function(){
-  b(function(){
-    c(function(){
-      d()
+a(function () {
+  b(function () {
+    c(function () {
+      d(function () {
+        // ...
+      })
     })
   })
 })
 
-// Promise 객체 
-function a(){
-  return new Promise( resolve => {
-    setTimeout(function(){
+
+// 약속(Promise) 객체(생성자)를 사용
+// Then을 사용
+function a() {
+  return new Promise(resolve => {
+    setTimeout(function () {
       console.log('a')
       resolve()
-    },1000)
+    }, 1000)
   })
 }
-
 function b() {
-  return new Promise( resolve =>{
-    setTimeout(function(){
+  return new Promise(resolve => {
+    setTimeout(function () {
       console.log('b')
       resolve()
-    },1000) 
+    }, 1000)
   })
 }
-function c() {
-  return new Promise( resolve =>{
-    setTimeout(function(){
-      console.log('c')
-      resolve()
-    },1000) 
-  })
-}
-function d() {
-  return new Promise( resolve =>{
-    setTimeout(function(){
-      console.log('d')
-      resolve()
-    },1000) 
-  })
-}
+// c함수 d함수 등...
+
 a()
-  .then(() => b())
+  .then(() => b()) // return 필수! `.then(function () { return b() })`와 같음!
   .then(() => c())
   .then(() => d())
+// ...
 
- async function asyncFunc(){
-    await a()
-    await b()
-    await c()
-    await d()
-    console.log('done')
-  }
 
-  function a(){
-    return new Promise((resolve,reject) => {
-      if(isError){
-        reject(Error)
-      }
-      setTimeout(()=>{
-        console.log('a')
-        resolve('done')
-      },1000)
-    })
-  }
-
-  a() 
-  .then((res)=>{
-    console.log(res)
+// Async/Await를 사용
+function a() {
+  new Promise(resolve => {
+    setTimeout(function () {
+      console.log('a')
+      resolve()
+    }, 1000)
   })
-  .catch((error)=>{
-      console.log(error)
-      alert(error.message)
+}
+function b() {
+  new Promise(resolve => {
+    setTimeout(function () {
+      console.log('b')
+      resolve()
+    }, 1000)
   })
-  .finally(()=>{
+}
+// c함수 d함수 등...
 
-  })
+async function asyncFunc() {
+  await a()
+  await b()
+  await c()
+  await d()
+  // ...
+}
+asyncFunc()
 
-  async function asyncFunc(){
-    try{
-      const res=  await a () 
-      console.log(res)
-    } catch (error) {
-      console.log(error)
-      alert(error.message)
-    } finally{
-      console.log('done!')
+
+// Then을 사용해서 Try/Catch/Finally
+function a() {
+  new Promise((resolve, reject) => {
+    if (isError) {
+      reject(ERROR_OBJECT)
     }
-  }
+    setTimeout(function () {
+      console.log('a')
+      resolve(MY_DATA)
+    }, 1000)
+  })
+}
 
-  asyncFunc()
+a()
+  .then(res => { console.log(res) }) // res is MY_DATA
+  .catch(error => { console.log(error.message) }) // error is ERROR_OBJECT
+  .finally(() => { console.log('Finally') })
+
+
+// Async/Await를 사용해서 Try/Catch/Finally
+function a() {
+  new Promise((resolve, reject) => {
+    if (isError) {
+      reject(ERROR_OBJECT)
+    }
+    setTimeout(function () {
+      console.log('a')
+      resolve(MY_DATA)
+    }, 1000)
+  })
+}
+
+async function asyncFunc() {
+  try {
+    const res = await a()
+    console.log(res) // res is MY_DATA
+  } catch (error) { // error is ERROR_OBJECT
+    console.log(error.message)
+  } finally {
+    console.log('Finally')
+  }
+}
+asyncFunc()
