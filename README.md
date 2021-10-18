@@ -1,4 +1,4 @@
-# Vue.js 2.0 공부학습자료 공간입니다. 😎
+# Vue.js 2.0 공부학습자료 공간입니다. 😎 Update (2020.10.19)
 
 > ## [Todolist](https://sleepy-lichterman-6bab5b.netlify.app/)
 
