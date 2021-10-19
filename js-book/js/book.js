@@ -123,7 +123,6 @@ async function main() {
   }
   console.log(book)
   //받아온 책을 그리기
-
   render(book)
 }
 

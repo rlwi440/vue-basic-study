@@ -11,7 +11,7 @@ async function getUserByToken(token) {
     })
     return res.data
   } catch (error) {
-    console.log("getUserByToken error", error)
+    console.log("getUserByToken", error)
     return null
   }
 }
