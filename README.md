@@ -28,6 +28,8 @@ src
 > 영화 API 프로젝트입니다  
 > 자세한 내용은블로그로 정리예정입니다.
 
+> ## 🟢 [JS-Books](https://faboritebooks.netlify.app/login) 데모페이지 입니다.
+
 ```sh
 src
 ├── css
@@ -36,5 +38,4 @@ src
 ```
 
 > CRUD를 사용한 북 (읽기,쓰기 지우기) 사용한 예제 입니다.  
-> 🟢 [JS-Books](https://faboritebooks.netlify.app/login) 데모페이지 입니다.
 > [JSBooks](<https://rlwi440.github.io/project/book(crud)/>) 정리한 내용글 입니다.
