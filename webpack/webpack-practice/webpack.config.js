@@ -8,7 +8,7 @@ const TerserWebpackPlugin = require("terser-webpack-plugin")
 module.exports = {
   entry: "./index.js",
   output: {
-    filename: "[name].[chunkhash].js", //hash,contenthash,chunkhash
+    filename: "[name].[hash].js", //hash,contenthash,chunkhash
     path: path.resolve(__dirname, "dist")
   },
   module: {

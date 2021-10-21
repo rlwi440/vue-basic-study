@@ -22,3 +22,8 @@ https://webpack.js.org/guides/  가이드 참고
 
 
 Chunk&Chunkhash  키워드 및 정리중 
+
+
+ devServer: {
+    historyApiFallBack: 히스토리 API를 사용하는 SPA 개발시 설정한다. 404가 발생하면 index.html로 리다이렉트한다
+  }

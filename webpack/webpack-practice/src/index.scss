@@ -1,0 +1,23 @@
+$bg-color:#232c34;
+$font-color:green;
+
+body {
+  background-color: $bg-color;
+  text-align: center;
+}
+
+div {
+  color: $font-color;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  font-size: 20px;
+}
+
+img {
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  margin-top: -150px;
+}
