@@ -1,4 +1,4 @@
-# Vue.js 2.0 공부학습자료 공간입니다. 😎 Update (2020.10.19)
+# Vue.js 2.0 공부학습자료 공간입니다. 😎 Update (2020.10.21)
 
 > ## [Todolist](https://sleepy-lichterman-6bab5b.netlify.app/)
 
@@ -10,7 +10,7 @@ src
 └── assets
 ```
 
-> Todo list 입니다 CRUD를 사용하였습니다
+**Todo list 입니다 CRUD를 사용하였습니다**
 
 > ## [MovieApp](https://vue-movie-app-f6cb2.firebaseapp.com/)
 
@@ -25,10 +25,10 @@ src
 └── assets
 ```
 
-> 영화 API 프로젝트입니다  
-> 자세한 내용은블로그로 정리예정입니다.
+**영화 API 프로젝트입니다**  
+**자세한 내용은블로그로 정리예정입니다.**
 
-> ## 🟢 [JS-Books](https://faboritebooks.netlify.app/login) 데모페이지 입니다.
+> ## [JS-Books](https://faboritebooks.netlify.app/login) 데모페이지 입니다.
 
 ```sh
 src
@@ -37,5 +37,13 @@ src
 └── html
 ```
 
-> CRUD를 사용한 북 (읽기,쓰기 지우기) 사용한 예제 입니다.  
-> [JSBooks](<https://rlwi440.github.io/project/book(crud)/>) 정리한 내용글 입니다.
+**CRUD를 사용한 북 (읽기,쓰기 지우기) 사용한 예제 입니다.**  
+**[JSBooks](<https://rlwi440.github.io/project/book(crud)/>) 정리한 내용글 입니다.**
+
+## [Jest](https://rlwi440.github.io/Vue/jest/)
+
+> **1.Globals 의 자주 사용하는문법**  
+> **2.Test Matcher의 자주 사용하는 종류(To Equal, To contain)**  
+> **3.mount 와 shallowmount 차이**
+
+## [Webpack]
