@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <div id="app">
+    <app-header :title="str"></app-header>
+    <app-content @change="changeStr"></app-content>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+  <script>
+    new Vue({
+      el: '#app',
+      data() {
+        return {
+          str: "타이틀 입니다."
+        }
+      },
+      methods: {
+        changeStr() {
+          this.str = 'emit전달 넘겨줌 '
+        }
+      },
+      components: {
+        'appHeader': {
+          props: ['title'],
+          template: '<h1>{{title}}</h1>'
+        },
+        'appContent': {
+          props: ['onChange'],
+          template: '<main>emit 전달<button @click="change">emit버튼 </button> </main>',
+          methods: {
+            change() {
+              this.$emit('change')
+            }
+          }
+        }
+      }
+    })
+  </script>
+</body>
+
+</html>
