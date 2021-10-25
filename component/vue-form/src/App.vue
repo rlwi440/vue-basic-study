@@ -20,7 +20,7 @@
     <p v-if="isSuccess">로그인이되었습니다.</p>
     <!-- <p v-if="isError">올바르지 않는형태입니다.</p>
     <p v-if="isUserValidate">이메일 형식이 맞습니다.</p> -->
-    <toast-popup :open="isSuccess"></toast-popup>
+    <toast-popup :open="isSuccess" @close="isSuccess = false"></toast-popup>
   </div>
 </template>
 

@@ -1,16 +1,22 @@
 <template>
-  <div class="toast">
-    토스트 팝업
+  <div class="toast" :class="{ animation: open }">
+    로그인이 완료 되었습니다.
   </div>
 </template>
 
 <script>
+let timer
 export default {
   props: ["open"],
   watch: {
     open(newValue) {
       if (newValue) {
         console.log("토스트 팝업열기 ")
+
+        setTimeout(() => {
+          clearTimeout(timer)
+          this.$emit("close")
+        }, 2000)
       }
     }
   }
@@ -27,11 +33,11 @@ export default {
   align-items: center;
   justify-content: center;
   position: fixed;
-  bottom: 5%;
-  left: -5%;
-  transition: left 0.5s linear;
-}
-.open {
+  bottom: -5%;
   left: 5%;
+  transition: bottom 0.5s linear;
+}
+.animation {
+  bottom: 5%;
 }
 </style>
