@@ -1,6 +1,6 @@
 <template>
   <div class="toast" :class="{ animation: open }">
-    로그인이 완료 되었습니다.
+    토스트 팝업입니다.
   </div>
 </template>
 
@@ -11,8 +11,7 @@ export default {
   watch: {
     open(newValue) {
       if (newValue) {
-        console.log("토스트 팝업열기 ")
-
+        console.log("로그인 전달 성공!")
         setTimeout(() => {
           clearTimeout(timer)
           this.$emit("close")
